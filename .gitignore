@@ -8,8 +8,10 @@
 
 # Node
 /node_modules
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # IDEs and editors
 .idea/
@@ -37,6 +39,30 @@ yarn-error.log
 testem.log
 /typings
 
+# TypeScript
+*.tsbuildinfo
+
 # System files
 .DS_Store
 Thumbs.db
+
+# Backup and temporary files
+*~
+*.bak
+*.swp
+
+# Build tool files
+/webpack-cache/
+/parcel-cache/
+
+# JetBrains IDEs
+.idea/*
+
+# NetBeans IDE
+/nbproject/private/
+
+# Operating system files
+.*/.swp
+.*/.swo
+/.spotlight-v100
+/.Trashes

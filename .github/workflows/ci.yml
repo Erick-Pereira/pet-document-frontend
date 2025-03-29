@@ -23,12 +23,6 @@ jobs:
         with:
           node-version: "18" # Atualizado para Node.js 18
 
-      # Passo 2.1: Verificar versão do Node.js e npm
-      - name: Check Node.js and npm versions
-        run: |
-          node -v
-          npm -v
-
       # Passo 3: Limpar o cache do npm
       - name: Clean npm cache
         run: |
@@ -38,11 +32,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-
-      # Passo 4.2: Verificar instalação do Prettier/.bin ao PATH
-      - name: Verify Prettier installation to PATH
-        run: |
-          npx prettier --version(npm bin)"
 
       # Passo 5: Instalar o Google Chrome      # Passo 5: Instalar o Google Chrome
       - name: Install Google Chrome
@@ -74,16 +63,3 @@ jobs:
       - name: Build Angular app
         run: |
           npm run build --prod  # Executa o build de produção do Angular# Executa o build de produção do Angular
-
-      # Passo 9: Verificar se a build foi bem-sucedida (genérico)erificar se a build foi bem-sucedida (genérico)
-      - name: Check build success: Check build success
-        run: |        run: |
-
-
-
-
-
-          fi            exit 1            echo "Build failed! Dist folder not found."          if [ ! -d dist ]; then          if [ ! -d dist ]; then
-            echo "Build failed! Dist folder not found."
-            exit 1
-          fi

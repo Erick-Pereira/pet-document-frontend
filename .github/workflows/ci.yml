@@ -60,10 +60,10 @@ jobs:
         run: |
           npm run format
 
-      # Passo 9: Verificar configuração do ng lint
+      # Passo 9: Verificar configuração do ng lint (removido --dry-run)
       - name: Check ng lint configuration
         run: |
-          npm run lint -- --dry-run
+          npm run lint
 
       # Passo 10: Rodar os testes unitários
       - name: Run unit tests

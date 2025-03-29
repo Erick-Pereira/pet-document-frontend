@@ -39,13 +39,18 @@ jobs:
         run: |
           npm ci
 
-      # Passo 5: Instalar o Google Chrome
+      # Passo 4.2: Verificar instalação do Prettier/.bin ao PATH
+      - name: Verify Prettier installation to PATH
+        run: |
+          npx prettier --version(npm bin)"
+
+      # Passo 5: Instalar o Google Chrome      # Passo 5: Instalar o Google Chrome
       - name: Install Google Chrome
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          sudo apt-get update apt-get update
+          sudo apt-get install -y google-chrome-stable install -y google-chrome-stable
 
-      # Passo 6: Rodar o ng lint para verificar a qualidade do código
+      # Passo 6: Rodar o ng lint para verificar a qualidade do códigoa qualidade do código
       - name: Run ng lint
         run: |
           npm run lint
@@ -55,12 +60,12 @@ jobs:
         run: |
           npm run format
 
-      # Passo 6.2: Verificar configuração do ng lint
-      - name: Check ng lint configuration
+      # Passo 6.2: Verificar configuração do ng lintdo ng lint
+      - name: Check ng lint configurationconfiguration
         run: |
           npm run lint -- --dry-run
 
-      # Passo 7: Rodar os testes unitários
+      # Passo 7: Rodar os testes unitárioss
       - name: Run unit tests
         run: |
           npm run test -- --watch=false --browsers=ChromeHeadless
@@ -68,12 +73,17 @@ jobs:
       # Passo 8: Rodar a build do Angular
       - name: Build Angular app
         run: |
-          npm run build --prod  # Executa o build de produção do Angular
+          npm run build --prod  # Executa o build de produção do Angular# Executa o build de produção do Angular
 
-      # Passo 9: Verificar se a build foi bem-sucedida (genérico)
-      - name: Check build success
-        run: |
-          if [ ! -d dist ]; then
+      # Passo 9: Verificar se a build foi bem-sucedida (genérico)erificar se a build foi bem-sucedida (genérico)
+      - name: Check build success: Check build success
+        run: |        run: |
+
+
+
+
+
+          fi            exit 1            echo "Build failed! Dist folder not found."          if [ ! -d dist ]; then          if [ ! -d dist ]; then
             echo "Build failed! Dist folder not found."
             exit 1
           fi

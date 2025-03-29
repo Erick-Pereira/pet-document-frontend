@@ -1,0 +1,43 @@
+$footer-bg: #2c3e50;
+$footer-text: #ecf0f1;
+$footer-hover: #3498db;
+$icon-color: #ecf0f1;
+$transition: 0.3s ease;
+
+footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  margin-top: 3.75rem;
+  border-radius: 10px 10px 0 0;
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    a {
+      color: $icon-color;
+      font-size: 1.5rem;
+      transition: color $transition, transform $transition;
+
+      &:hover,
+      &:focus {
+        color: $footer-hover;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}

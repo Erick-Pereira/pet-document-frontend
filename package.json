@@ -1,24 +1,26 @@
 {
   "name": "pet-document-frontend",
   "version": "0.0.0",
-"scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "build": "ng build",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test",
-  "lint": "ng lint",
-  "compile": "ng build"
-},
+  "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "compile": "ng build"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
-    "@angular/cdk": "^14.2.0", 
+    "@angular/cdk": "^14.2.0",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
-    "@angular/material": "^14.2.0", 
+    "@angular/material": "^14.2.0",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
@@ -26,7 +28,7 @@
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
     "ngx-toastr": "^14.2.0",
-    "rxjs": "^7.5.0", 
+    "rxjs": "^7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -36,6 +38,8 @@
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
     "angular-eslint": "^19.3.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.23.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
@@ -43,8 +47,14 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "standard-version": "^9.5.0",
     "typescript": "^4.8.4",
     "typescript-eslint": "^8.27.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "engines": {
     "node": ">=16.0.0",

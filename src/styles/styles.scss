@@ -1,0 +1,72 @@
+@import 'variables';
+
+/* Resetando estilos padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Garante que a página ocupe toda a largura */
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: $line-height-base;
+  padding-top: 60px; /* Espaço para o navbar */
+}
+
+/* Centralização do conteúdo principal */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-md;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  color: $text-color;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: $space-lg;
+  margin-bottom: $space-sm;
+}
+
+/* Parágrafos */
+p {
+  font-size: $font-size-base;
+  margin-bottom: $space-sm;
+}
+
+/* Estilo da seção de recursos */
+.resources {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: $space-md;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade e correção de largura */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $space-md;
+  justify-content: center;
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .content {
+    padding: $space-sm;
+  }
+
+  .resources {
+    padding: $space-sm;
+  }
+}

@@ -23,15 +23,21 @@ jobs:
         with:
           node-version: "16" # Ou qualquer versão que você esteja usando no seu projeto
 
+      # Passo 2.1: Verificar versão do Node.js e npm
+      - name: Check Node.js and npm versions
+        run: |
+          node -v
+          npm -v
+
       # Passo 3: Limpar o cache do npm
       - name: Clean npm cache
         run: |
           npm cache clean --force
 
-      # Passo 4: Instalar as dependências
+      # Passo 4: Instalar as dependências (usando npm ci para builds reprodutíveis)
       - name: Install dependencies
         run: |
-          npm install
+          npm ci
 
       # Passo 5: Instalar o Google Chrome
       - name: Install Google Chrome
@@ -44,6 +50,11 @@ jobs:
         run: |
           npm run lint
 
+      # Passo 6.1: Verificar o formato do código
+      - name: Check code formatting
+        run: |
+          npm run format
+
       # Passo 7: Rodar os testes unitários
       - name: Run unit tests
         run: |
@@ -54,10 +65,10 @@ jobs:
         run: |
           npm run build --prod  # Executa o build de produção do Angular
 
-      # Passo 9: Verificar se a build foi bem-sucedida
+      # Passo 9: Verificar se a build foi bem-sucedida (genérico)
       - name: Check build success
         run: |
-          if [ ! -f dist/your-app/index.html ]; then
-            echo "Build failed!"
+          if [ ! -d dist ]; then
+            echo "Build failed! Dist folder not found."
             exit 1
           fi

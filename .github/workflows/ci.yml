@@ -17,11 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Passo 2: Configurar o Node.js
+      # Passo 2: Configurar o Node.js (atualizado para versão 18)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16" # Ou qualquer versão que você esteja usando no seu projeto
+          node-version: "18" # Atualizado para Node.js 18
 
       # Passo 2.1: Verificar versão do Node.js e npm
       - name: Check Node.js and npm versions
@@ -54,6 +54,11 @@ jobs:
       - name: Check code formatting
         run: |
           npm run format
+
+      # Passo 6.2: Verificar configuração do ng lint
+      - name: Check ng lint configuration
+        run: |
+          npm run lint -- --dry-run
 
       # Passo 7: Rodar os testes unitários
       - name: Run unit tests

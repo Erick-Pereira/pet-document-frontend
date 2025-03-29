@@ -1,8 +1,8 @@
 /* navbar.component.scss */
-$primary-color: #3498db;  /* Azul vibrante */
-$dark-color: #2c3e50;     /* Cor escura para a navbar */
+$primary-color: #3498db; /* Azul vibrante */
+$dark-color: #2c3e50; /* Cor escura para a navbar */
 $white: #fff;
-$hover-color: #2980b9;    /* Cor de hover */
+$hover-color: #2980b9; /* Cor de hover */
 
 .navbar {
   background-color: $dark-color;
@@ -17,7 +17,7 @@ $hover-color: #2980b9;    /* Cor de hover */
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 4px solid $primary-color;  /* Adicionando um destaque ao fundo */
+  border-bottom: 4px solid $primary-color; /* Adicionando um destaque ao fundo */
 }
 
 .navbar .logo {
@@ -47,11 +47,11 @@ $hover-color: #2980b9;    /* Cor de hover */
 
 .navbar a:hover {
   color: $hover-color;
-  transform: translateY(-3px);  /* Efeito de elevação no hover */
+  transform: translateY(-3px); /* Efeito de elevação no hover */
 }
 
 .navbar .menu-toggle {
-  display: none;  /* Será usado em dispositivos móveis */
+  display: none; /* Será usado em dispositivos móveis */
 }
 
 @media (max-width: 768px) {
@@ -76,6 +76,6 @@ $hover-color: #2980b9;    /* Cor de hover */
   }
 
   .navbar ul.active {
-    display: flex;  /* Exibe o menu ao clicar */
+    display: flex; /* Exibe o menu ao clicar */
   }
 }

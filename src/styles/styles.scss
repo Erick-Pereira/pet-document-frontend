@@ -8,7 +8,8 @@
 }
 
 /* Garante que a página ocupe toda a largura */
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   font-family: $font-family-base;
@@ -27,7 +28,9 @@ html, body {
 }
 
 /* Títulos */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $text-color;
   font-weight: bold;
 }

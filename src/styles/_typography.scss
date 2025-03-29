@@ -1,7 +1,12 @@
 /* src/styles/_typography.scss */
 
 // Tipografia base
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   color: $primary-color;
@@ -35,7 +40,7 @@ a {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
-  
+
   &:hover {
     text-decoration: underline;
     color: $primary-color-dark; // Melhorando UX no hover

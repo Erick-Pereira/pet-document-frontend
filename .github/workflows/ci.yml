@@ -21,7 +21,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18" # Atualizado para Node.js 18
+          node-version: '18'
+
+      # Passo 2.1: Verificar versão do Node.js e npm
+      - name: Check Node.js and npm versions
+        run: |
+          node -v
+          npm -v
 
       # Passo 3: Limpar o cache do npm
       - name: Clean npm cache
@@ -33,33 +39,38 @@ jobs:
         run: |
           npm ci
 
-      # Passo 5: Instalar o Google Chrome      # Passo 5: Instalar o Google Chrome
+      # Passo 5: Configurar o Husky
+      - name: Configure Husky
+        run: |
+          npx husky install
+
+      # Passo 6: Instalar o Google Chrome
       - name: Install Google Chrome
         run: |
-          sudo apt-get update apt-get update
-          sudo apt-get install -y google-chrome-stable install -y google-chrome-stable
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-      # Passo 6: Rodar o ng lint para verificar a qualidade do códigoa qualidade do código
+      # Passo 7: Rodar o ng lint para verificar a qualidade do código
       - name: Run ng lint
         run: |
           npm run lint
 
-      # Passo 6.1: Verificar o formato do código
+      # Passo 8: Verificar o formato do código
       - name: Check code formatting
         run: |
           npm run format
 
-      # Passo 6.2: Verificar configuração do ng lintdo ng lint
-      - name: Check ng lint configurationconfiguration
+      # Passo 9: Verificar configuração do ng lint
+      - name: Check ng lint configuration
         run: |
           npm run lint -- --dry-run
 
-      # Passo 7: Rodar os testes unitárioss
+      # Passo 10: Rodar os testes unitários
       - name: Run unit tests
         run: |
           npm run test -- --watch=false --browsers=ChromeHeadless
 
-      # Passo 8: Rodar a build do Angular
+      # Passo 11: Rodar a build do Angular
       - name: Build Angular app
         run: |
-          npm run build --prod  # Executa o build de produção do Angular# Executa o build de produção do Angular
+          npm run build --prod

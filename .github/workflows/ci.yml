@@ -69,3 +69,8 @@ jobs:
       - name: Build Angular app
         run: |
           npm run build --prod
+
+      # Passo 10: Rodar os testes unitários
+      - name: Run unit tests
+        run: |
+          npm run test -- --watch=false --browsers=ChromeHeadless

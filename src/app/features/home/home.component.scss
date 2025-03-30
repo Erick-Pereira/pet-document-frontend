@@ -1,0 +1,34 @@
+.content {
+  @extend .container !optional;
+
+  section {
+    margin-bottom: 20px;
+
+    h2 {
+      @extend h2;
+    }
+
+    p,
+    ul {
+      @extend p;
+    }
+
+    ul {
+      @extend ul;
+    }
+
+    .testimonial {
+      margin-top: 10px;
+
+      p {
+        font-style: italic;
+      }
+
+      span {
+        display: block;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}

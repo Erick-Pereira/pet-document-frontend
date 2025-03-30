@@ -1,0 +1,67 @@
+<main class="content container py-5">
+  <!-- Highlight Card -->
+  <app-highlight-card></app-highlight-card>
+
+  <!-- About Section -->
+  <section class="about my-5">
+    <h2 class="text-success mb-3">Sobre Nós</h2>
+    <p class="lead text-muted">
+      Somos uma plataforma dedicada a facilitar a gestão de documentos e
+      informações sobre seus animais de estimação.
+    </p>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits my-5">
+    <h2 class="text-success mb-3">Benefícios</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        Organize documentos de forma prática e segura.
+      </li>
+      <li class="list-group-item">Acesse informações de qualquer lugar.</li>
+      <li class="list-group-item">
+        Facilidade no compartilhamento de dados com veterinários.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact my-5">
+    <h2 class="text-success mb-3">Entre em Contato</h2>
+    <p class="text-muted">
+      Tem dúvidas? Entre em contato conosco pelo e-mail:
+      <a href="mailto:contato@petdocument.com" class="text-decoration-none"
+        >contato@petdocument.com</a
+      >
+    </p>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="resources my-5">
+    <h2 class="text-success mb-3">Recursos</h2>
+    <p class="text-muted">Aqui estão alguns links para você começar:</p>
+    <div class="row">
+      <div class="col-md-4">
+        <app-resource-card
+          title="Documentos de Animais"
+          link="https://link-para-detalhes"
+          icon="pets"
+        ></app-resource-card>
+      </div>
+      <div class="col-md-4">
+        <app-resource-card
+          title="FAQ"
+          link="https://link-para-faq"
+          icon="help"
+        ></app-resource-card>
+      </div>
+      <div class="col-md-4">
+        <app-resource-card
+          title="Contato"
+          link="https://link-para-contato"
+          icon="contact_mail"
+        ></app-resource-card>
+      </div>
+    </div>
+  </section>
+</main>

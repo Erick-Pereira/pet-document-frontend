@@ -1,34 +1,7 @@
-<app-navbar></app-navbar>
+<app-navbar [menuItems]="menuItems"></app-navbar>
 
-<main>
-  <!-- Highlight Card -->
-  <app-highlight-card></app-highlight-card>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
 
-  <!-- Resources Section -->
-  <section class="resources" aria-label="Seção de Recursos">
-    <h2>Recursos</h2>
-    <p>Aqui estão alguns links para você começar:</p>
-    <div class="card-container">
-      <app-resource-card
-        title="Documentos de Animais"
-        link="https://link-para-detalhes"
-        icon="pets"
-      ></app-resource-card>
-      <app-resource-card
-        title="FAQ"
-        link="https://link-para-faq"
-        icon="help"
-      ></app-resource-card>
-      <app-resource-card
-        title="Contato"
-        link="https://link-para-contato"
-        icon="contact_mail"
-      ></app-resource-card>
-    </div>
-  </section>
-  <!-- Fechar a section aqui -->
-</main>
-<!-- Fechar o main aqui -->
-
-<!-- Footer -->
 <app-footer></app-footer>

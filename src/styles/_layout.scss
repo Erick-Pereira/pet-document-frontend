@@ -1,0 +1,19 @@
+/* src/styles/_layout.scss */
+
+@import 'variables';
+
+/* Estilo para containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-md;
+}
+
+/* Grid básico para layout flexível */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $space-sm;
+  width: 100%;
+}

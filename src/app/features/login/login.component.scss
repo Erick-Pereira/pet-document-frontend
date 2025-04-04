@@ -1,0 +1,38 @@
+@import 'src/styles/_variables';
+
+.login-container {
+  @extend .container !optional;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+      color: $text-color;
+    }
+
+    input {
+      margin-bottom: 15px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken(
+          $primary-color,
+          10%
+        ); // Ensure $primary-color is valid
+      }
+    }
+  }
+}

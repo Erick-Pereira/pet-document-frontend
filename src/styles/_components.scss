@@ -1,0 +1,29 @@
+/* src/styles/_components.scss */
+
+// Estilos para um componente de botão
+.btn-primary {
+  background-color: $primary-color;
+  color: white;
+  padding: $space-sm $space-md;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color-dark;
+  }
+}
+
+// Estilo para cards
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: $space-md;
+  margin-bottom: $space-lg;
+}
+
+// Estilo para ícones
+.icon {
+  font-size: 2rem;
+  color: $primary-color;
+}

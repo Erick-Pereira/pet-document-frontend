@@ -1,0 +1,71 @@
+name: Angular CI Pipeline
+
+on:
+  push:
+    branches:
+      - main # ou 'master', conforme o seu branch principal
+  pull_request:
+    branches:
+      - main # ou 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Usando Ubuntu para rodar o pipeline
+
+    steps:
+      # Passo 1: Fazer checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Passo 2: Configurar o Node.js (atualizado para versão 18)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      # Passo 2.1: Verificar versão do Node.js e npm
+      - name: Check Node.js and npm versions
+        run: |
+          node -v
+          npm -v
+
+      # Passo 3: Limpar o cache do npm
+      - name: Clean npm cache
+        run: |
+          npm cache clean --force
+
+      # Passo 4: Instalar as dependências (usando npm ci para builds reprodutíveis)
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      # Passo 5: Configurar o Husky
+      - name: Configure Husky
+        run: |
+          npx husky install
+
+      # Passo 6: Instalar o Google Chrome
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      # Passo 7: Rodar o ng lint para verificar a qualidade do código
+      - name: Run ng lint
+        run: |
+          npm run lint
+
+      # Passo 8: Verificar o formato do código
+      - name: Check code formatting
+        run: |
+          npm run format
+
+      # Passo 9: Verificar configuração do ng lint (removido --dry-run)
+      - name: Check ng lint configuration
+        run: |
+          npm run lint
+
+      # Passo 10: Rodar a build do Angular
+      - name: Build Angular app
+        run: |
+          npm run build --prod

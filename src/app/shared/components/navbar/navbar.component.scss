@@ -1,0 +1,98 @@
+/* navbar.component.scss */
+$primary-color: #3498db; /* Azul vibrante */
+$dark-color: #2c3e50; /* Cor escura para a navbar */
+$white: #fff;
+$hover-color: #2980b9; /* Cor de hover */
+$gradient-bg: linear-gradient(
+  90deg,
+  $primary-color,
+  darken($primary-color, 10%)
+);
+
+.navbar {
+  background-color: #3e8e41; /* Cor verde mais escura, condizente com o tema de pets */
+  height: 60px; /* Altura fixa da navbar */
+  padding: 0 20px; /* Espaçamento interno */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed; /* Fixar a navbar no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .logo {
+    color: white;
+    font-size: 1.8rem; /* Aumenta o tamanho do logo */
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem; /* Aumenta o tamanho do botão de menu */
+    cursor: pointer;
+
+    &:hover {
+      color: #ddd;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Aumenta o espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem; /* Aumenta o tamanho dos botões */
+        padding: 8px 15px; /* Adiciona espaçamento interno aos botões */
+        border-radius: 5px; /* Bordas arredondadas */
+
+        &:hover {
+          background-color: #2e7031; /* Cor de hover mais escura */
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Responsividade para telas menores
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    ul {
+      display: none;
+      flex-direction: column;
+      background-color: #3e8e41;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          font-size: 1rem; /* Ajusta o tamanho dos botões para telas menores */
+          padding: 10px;
+        }
+      }
+    }
+
+    &.scrolled ul {
+      display: flex;
+    }
+  }
+}
